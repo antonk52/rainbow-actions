@@ -1,6 +1,6 @@
 {
   "name": "rainbow-actions",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Type safe and namespaced redux actions",
   "main": "index.js",
   "types": "index.d.js",
