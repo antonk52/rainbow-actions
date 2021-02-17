@@ -1,6 +1,6 @@
 # Rainbow actions 🌈
 
-This is **not** a project to reduce redux boilerplate. The project goal is to gather actions and action creators for the same domain in namespaces by their domain purpose.
+This is **not** a project to reduce redux boilerplate. The project goal is to gather actions and action creators of the same domain in namespaces by their domain purpose.
 
 ## Install
 
@@ -39,11 +39,11 @@ const initType = requestPost.init.type
 const initAction = requestPost.init('42')
 ```
 
-Typescript raises an error when one attempts to access a property on `requestPost` any other than the keys of `PayloadDictionary`.
+Typescript raises an error when one attempts to access a property of `requestPost` any other than the keys of `PayloadDictionary`.
 
 ## Advanced usage
 
-Note the object passed to the function after the action type base.
+Note the object passed to the function after the action type base:
 
 ```typescript
 import {createActions} from 'rainbow-actions'
@@ -55,9 +55,9 @@ type PayloadDictionary = {
 }
 
 /**
- * You can see that using the optinal action dictionary argument you can define:
+ * You can see that using the optional action dictionary argument you can define:
  * * payload - a function to generate/modify payload
- * * meta - a function to generate/modify payload
+ * * meta - a function to generate/modify meta information
  * * error - a flag for error actions
  *
  * You can define the ones you need or omit them alltogether
@@ -90,11 +90,11 @@ const three = base.three('hey')
 
 ## Caveat
 
-Both basic and advanced usage work using the Proxy object. This means if you are not 100% confident about your types than developers may accidentally dispatch incorrect actions since any method on the created action namespace will be a valid action creator. If this sounds scary, worry no more, this package also provides a safe version.
+Both basic and advanced usage work using the Proxy object. This means if you are not 100% confident about your types, then developers may accidentally dispatch incorrect actions since any method on the created action namespace will be a valid action creator. If this sounds scary, worry no more, this package also provides a safe version.
 
 ## Safe usage
 
-If you prefer to avoid the Proxy usage or are not 100% confident in the typescript types in your project you can use the safe version. It requires to pass all of the actions for the namespace to be accessible.
+If you prefer to avoid the Proxy usage or are not 100% confident in the typescript types in your project, you can use the safe version. It requires to pass all of the actions for the namespace to be accessible.
 
 ```typescript
 import {createActions} from 'rainbow-actions/safe'
