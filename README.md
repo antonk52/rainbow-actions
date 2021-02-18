@@ -1,6 +1,6 @@
 # Rainbow actions 🌈
 
-This is **not** a project to reduce redux boilerplate. The project goal is to gather actions and action creators of the same domain in namespaces by their domain purpose.
+This is **not** a project to reduce redux boilerplate. The project goal is to gather the same domain actions and action creators in namespaces by their domain purpose.
 
 ## Install
 
