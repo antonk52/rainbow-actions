@@ -68,3 +68,13 @@ export declare function createActions<M extends PayloadDict>(): <
               type: `${T}_${K extends string ? K : '*'}`;
           }) & {type: `${T}_${K extends string ? K : '*'}`};
 };
+
+type AbstractActionNamespace = Record<string, (...args: any) => {type: string}>;
+
+export type ExtractNamespaceActions<T extends AbstractActionNamespace> = {
+    [K in keyof T]: ReturnType<T[K]>
+}[keyof T];
+
+export type ExtractManyNamespaceActions<T extends AbstractActionNamespace[]> = {
+  [K in keyof T]: T[K] extends AbstractActionNamespace ? ExtractNamespaceActions<T[K]> : never
+}[number];

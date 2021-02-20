@@ -41,6 +41,32 @@ const initAction = requestPost.init('42')
 
 Typescript raises an error when one attempts to access a property of `requestPost` any other than the keys of `PayloadDictionary`.
 
+## Extract action types
+
+```typescript
+import {createActions, ExtractNamespaceActions, ExtractManyNamespaceActions} from 'rainbow-actions'
+
+type RequestPayloads = {
+    init: number;
+    get: string;
+    end: never;
+}
+
+const request = createActions<RequestPayloads>()('request')
+
+/**
+ * To extract action types from a single namespace you can use `ExtractNamespaceActions`
+ */
+type Actions = ExtractNamespaceActions<typeof request>
+
+Actions // {type: 'request_init'; payload: number} | {type: 'request_get'; payload: string} | {type: 'request_end'}
+
+/**
+ * To extract action types from multiple namespaces you can use `ExtractManyNamespaceActions`
+ */
+type AllActions = ExtractManyNamespaceActions<[typeof request, typeof anotherNamespace /*...etc*/]>
+```
+
 ## Advanced usage
 
 Note the object passed to the function after the action type base:
@@ -63,11 +89,11 @@ type PayloadDictionary = {
  * You can define the ones you need or omit them alltogether
  */
 const base = createActions<PayloadDictionary>()('base', {
-    one: {payload: (id) => id * 2}}),
+    one: {payload: (id) => id * 2},
     //              ^^ the type inferred as number since we defined it in PayloadDictionary
-    two: {meta: (flag) => `flag is ${flag}`}}),
+    two: {meta: (flag) => `flag is ${flag}`},
     three: {error: true},
-)
+})
 
 /**
  * runtime value   `{type: 'base_one', payload: 10}`
@@ -110,8 +136,8 @@ type PayloadDictionary = {
 const requestPost = createActions<PayloadDictionary>()('base', {
     none: 0,
     //    ^ if no creators are necessary, 0 can be a placeholer
-    one: {payload: (id) => id * 2}}),
-    two: {meta: (flag) => `flag is ${flag}`}}),
+    one: {payload: (id) => id * 2},
+    two: {meta: (flag) => `flag is ${flag}`},
     three: {error: true},
 })
 
