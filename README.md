@@ -133,7 +133,7 @@ type PayloadDictionary = {
     three: string;
 }
 
-const requestPost = createActions<PayloadDictionary>()('base', {
+const base = createActions<PayloadDictionary>()('base', {
     none: 0,
     //    ^ if no creators are necessary, 0 can be a placeholer
     one: {payload: (id) => id * 2},
