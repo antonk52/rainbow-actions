@@ -29,6 +29,7 @@
     "typescript": "^4.1.5"
   },
   "peerDependencies": {
-    "redux-actions": "^2.*.*"
+    "redux-actions": "^2.*.*",
+    "immer": "^8.*.*"
   }
 }

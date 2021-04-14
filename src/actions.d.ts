@@ -1,5 +1,4 @@
 import type {AbstractAction, ActionUnionToDictionary, DeepReadonly} from './_types';
-import {ExtractManyNamespaceActions} from './index';
 
 /**
  * Handle actions `redux-actions` way

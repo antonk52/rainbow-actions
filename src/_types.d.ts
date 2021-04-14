@@ -20,3 +20,11 @@ type DeepReadonly<T> = T extends Set<any> | Map<any, any> | Function | Date
             : T extends Array<any>
                 ? ReadonlyArray<T[number]>
                 : T
+
+export type DeepWriteable<T> = T extends Set<any> | Map<any, any> | Function | Date
+    ? T
+    : T extends object
+        ? {-readonly [P in keyof T]: DeepWriteable<T[P]>;}
+        : T extends ReadonlyArray<infer U>
+            ? Array<U>
+            : T
