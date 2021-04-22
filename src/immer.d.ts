@@ -29,7 +29,7 @@ import type {AbstractAction, ActionUnionToDictionary, DeepWriteable} from './_ty
  */
 export declare function handleActions<S, A extends AbstractAction>(
     handlers: {
-        [T in keyof ActionUnionToDictionary<A>]?: (state: DeepWriteable<S>, action: ActionUnionToDictionary<A>[T]) => S;
+        [T in keyof ActionUnionToDictionary<A>]?: (state: DeepWriteable<S>, action: ActionUnionToDictionary<A>[T]) => S | void;
     },
     state: S,
 ): (state: S, action: A) => S;
