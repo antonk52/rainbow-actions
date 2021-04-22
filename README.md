@@ -1,5 +1,8 @@
 # Rainbow actions 🌈
 
+[![npm version](https://img.shields.io/npm/v/rainbow-actions.svg?style=flat)](https://www.npmjs.com/package/rainbow-actions)
+[![npm license](https://img.shields.io/npm/l/rainbow-actions.svg?style=flat)](https://www.npmjs.com/package/rainbow-actions)
+
 This is **not** a project to reduce redux boilerplate. The project goal is to gather the same domain actions and action creators in namespaces by their domain purpose.
 
 ## Install
