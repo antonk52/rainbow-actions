@@ -11,7 +11,7 @@ export type ActionUnionToDictionary<A extends AbstractAction> = {
     [K in A['type']]: Extract<A, {type: K}>;
 };
 
-type DeepReadonly<T> = T extends Set<any> | Map<any, any> | Function | Date
+export type DeepReadonly<T> = T extends Set<any> | Map<any, any> | Function | Date
     ? T
     : T extends object
         ? {readonly [P in keyof T]: DeepReadonly<T[P]>;}
