@@ -1,5 +1,8 @@
 # Rainbow actions 🌈
 
+[![npm version](https://img.shields.io/npm/v/rainbow-actions.svg?style=flat)](https://www.npmjs.com/package/rainbow-actions)
+[![npm license](https://img.shields.io/npm/l/rainbow-actions.svg?style=flat)](https://www.npmjs.com/package/rainbow-actions)
+
 This is **not** a project to reduce redux boilerplate. The project goal is to gather the same domain actions and action creators in namespaces by their domain purpose.
 
 ## Install
@@ -165,3 +168,58 @@ const two = base.two(true)
  */
 const three = base.three('hey')
 ```
+
+## Reducers
+
+There are two ways one may want to write reducers [redux-actions like](#redux-actions-like-reducers) or [immer way](#immer-reducers)
+
+## Redux actions like reducers
+
+```typescript
+import {handleActions} from 'rainbow-actions/reducer'
+import {request} from './actions'
+import type {Actions} from './actions'
+import type {State} from './state'
+
+const defaultState = {}
+
+export const reducer = handleActions<State, Actions>(
+    {
+        [request.init.type]: (state, action) => ({
+            ...state,
+            count: action.payload,
+            isLoading: true,
+        })
+        // other handlers
+    },
+    defaultState,
+)
+```
+
+## Immer reducers
+
+On the other hand you can use [`immer`](https://github.com/immerjs/immer). Immer is a peer dependency and you have to have it installed in your project.
+
+```typescript
+import {handleActions} from 'rainbow-actions/immer'
+import {request} from './actions'
+import type {Actions} from './actions'
+import type {State} from './state'
+
+const defaultState = {}
+
+export const reducer = handleActions<State, Actions>(
+    {
+        [request.init.type]: (state, action) => {
+            state.count = action.payload
+            state.isLoading = true
+        }
+        // other handlers
+    },
+    defaultState,
+)
+```
+
+## Acknowledgments
+
+This package is highly inspired by [typed-actions](https://github.com/lttb/typed-actions) and [piler](https://github.com/lttb/piler) by [@lttb](https://github.com/lttb).

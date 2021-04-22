@@ -1,10 +1,4 @@
-type PayloadDict = Record<string, unknown>;
-type AbstractAction = {
-    type: string;
-    payload?: any;
-    meta?: any;
-    error?: true;
-};
+import type {PayloadDict} from './_types';
 
 export declare function createActions<M extends PayloadDict>(): <
     T extends string,
