@@ -30,4 +30,4 @@ export declare function handleActions<S, A extends AbstractAction>(
         [T in keyof ActionUnionToDictionary<A>]?: (state: DeepReadonly<S>, action: ActionUnionToDictionary<A>[T]) => S;
     },
     state: S,
-): (state: S, action: A) => S;
+): (state: S | undefined, action: A) => S;
