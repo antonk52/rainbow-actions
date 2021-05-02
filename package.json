@@ -8,6 +8,7 @@
     "preversion": "npm run clean && npm ci && npm run types",
     "postversion": "npm run prep && npm publish dist && git push --follow-tags",
     "prep": "rm -rf dist && copyfiles ./src/* package.json README.md -f -a ./dist/",
+    "install-peers": "npm i immer@8 --no-save",
     "clean": "rm -rf node_modules",
     "types": "tsc",
     "test": "jest"
