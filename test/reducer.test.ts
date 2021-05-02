@@ -35,6 +35,12 @@ describe('reducer', () => {
         expect(result).toEqual({id: 123, result: 'loading'})
     });
 
+    it('accepts undefined as the state argument', () => {
+        const result = reducer(undefined, req.init(123));
+
+        expect(result).toEqual({id: 123, result: 'loading'})
+    });
+
     it('does not modify state for unknown action', () => {
         const st: State = {
             ...defaultState,
