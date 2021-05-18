@@ -28,3 +28,9 @@ export type DeepWriteable<T> = T extends Set<any> | Map<any, any> | Function | D
         : T extends ReadonlyArray<infer U>
             ? Array<U>
             : T
+
+export type AnyAction = {
+    type: string;
+    payload?: any;
+    meta?: any;
+}

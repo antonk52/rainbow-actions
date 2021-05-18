@@ -1,4 +1,4 @@
-import type {AbstractAction, ActionUnionToDictionary, DeepReadonly} from './_types';
+import type {AbstractAction, ActionUnionToDictionary, AnyAction, DeepReadonly} from './_types';
 
 /**
  * Handle actions `redux-actions` way
@@ -30,4 +30,4 @@ export declare function handleActions<S, A extends AbstractAction>(
         [T in keyof ActionUnionToDictionary<A>]?: (state: DeepReadonly<S>, action: ActionUnionToDictionary<A>[T]) => S;
     },
     state: S,
-): (state: S | undefined, action: A) => S;
+): (state: S | undefined, action: A | AnyAction) => S;
