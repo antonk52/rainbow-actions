@@ -1,4 +1,4 @@
-import type {AbstractAction, ActionUnionToDictionary, DeepWriteable} from './_types';
+import type {AbstractAction, ActionUnionToDictionary, AnyAction, DeepWriteable} from './_types';
 
 /**
  * Handle actions `immer` way
@@ -32,4 +32,4 @@ export declare function handleActions<S, A extends AbstractAction>(
         [T in keyof ActionUnionToDictionary<A>]?: (state: DeepWriteable<S>, action: ActionUnionToDictionary<A>[T]) => S | void;
     },
     state: S,
-): (state: S | undefined, action: A) => S;
+): (state: S | undefined, action: A | AnyAction) => S;

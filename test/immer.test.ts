@@ -56,7 +56,6 @@ describe('immer', () => {
         const st: State = {
             ...defaultState,
         };
-        // @ts-expect-error testing unknown action
         const result = reducer(st, {type: 'unknown', payload: 'whatever'});
 
         expect(result).toEqual(st)
