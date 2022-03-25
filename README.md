@@ -222,4 +222,4 @@ export const reducer = handleActions<State, Actions>(
 
 ## Acknowledgments
 
-This package is highly inspired by [typed-actions](https://github.com/lttb/typed-actions) and [piler](https://github.com/lttb/piler) by [@lttb](https://github.com/lttb).
+This package is highly inspired by [typed-actions](https://github.com/lttb/typed-actions), [piler](https://github.com/lttb/piler) by [@lttb](https://github.com/lttb), and [immer](https://github.com/immerjs/immer) by [@mweststrate](https://github.com/mweststrate).
