@@ -2,6 +2,7 @@
   "name": "rainbow-actions",
   "version": "0.2.3",
   "description": "Type safe and namespaced redux actions",
+  "funding": "https://github.com/sponsors/antonk52",
   "main": "index.js",
   "types": "index.d.js",
   "scripts": {
