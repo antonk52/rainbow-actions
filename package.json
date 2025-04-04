@@ -11,7 +11,7 @@
     "install-peers": "npm i immer@8 --no-save",
     "clean": "rm -rf node_modules",
     "types": "tsc",
-    "test": "jest"
+    "test": "vitest --run"
   },
   "keywords": [
     "redux",
@@ -21,11 +21,9 @@
   "author": "antonk52",
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "^29.0.0",
     "copyfiles": "^2.4.1",
-    "jest": "^29.0.0",
-    "ts-jest": "^29.0.0",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.2",
+    "vitest": "^3.1.1"
   },
   "peerDependencies": {
     "immer": "^8.*.* || ^9.*.* || ^10.*.*"

@@ -1,3 +1,4 @@
+import {describe, it, expect} from 'vitest';
 import {createActions} from '../src/index';
 
 describe('createActions', () => {
