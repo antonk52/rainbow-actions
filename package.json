@@ -30,7 +30,7 @@
     "typescript": "^4.1.5"
   },
   "peerDependencies": {
-    "immer": "^8.*.*"
+    "immer": "^8.*.* || ^9.*.* || ^10.*.*"
   },
   "engines": {
     "node": ">=12"
