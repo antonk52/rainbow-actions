@@ -1,3 +1,4 @@
+import {describe, it, expect} from 'vitest';
 import {createActions, ExtractNamespaceActions} from '../src/index';
 import {handleActions} from '../src/immer';
 

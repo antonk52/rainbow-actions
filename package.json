@@ -2,6 +2,7 @@
   "name": "rainbow-actions",
   "version": "0.2.3",
   "description": "Type safe and namespaced redux actions",
+  "funding": "https://github.com/sponsors/antonk52",
   "main": "index.js",
   "types": "index.d.js",
   "scripts": {
@@ -11,7 +12,7 @@
     "install-peers": "npm i immer@8 --no-save",
     "clean": "rm -rf node_modules",
     "types": "tsc",
-    "test": "jest"
+    "test": "vitest --run"
   },
   "keywords": [
     "redux",
@@ -21,16 +22,12 @@
   "author": "antonk52",
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "^26.0.20",
     "copyfiles": "^2.4.1",
-    "eslint": "^7.20.0",
-    "jest": "^26.6.3",
-    "prettier": "^2.2.1",
-    "ts-jest": "^26.5.1",
-    "typescript": "^4.1.5"
+    "typescript": "^5.8.2",
+    "vitest": "^3.1.1"
   },
   "peerDependencies": {
-    "immer": "^8.*.*"
+    "immer": "^8.*.* || ^9.*.* || ^10.*.*"
   },
   "engines": {
     "node": ">=12"
